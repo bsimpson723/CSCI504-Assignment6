@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlTypes;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/*
+ * CSCI 504: Programming principles in .NET
+ * Assignment 6
+ * Benjamin Simpson - Z100820
+ * Xueqiong Li - z1785226
+*/
+
+using System;
 using System.Windows.Forms;
 
 namespace Assignment6

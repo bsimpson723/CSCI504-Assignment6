@@ -1,11 +1,15 @@
-﻿using System;
+﻿/*
+ * CSCI 504: Programming principles in .NET
+ * Assignment 6
+ * Benjamin Simpson - Z100820
+ * Xueqiong Li - z1785226
+*/
+
+using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
-using System.Windows.Forms.VisualStyles;
 
 namespace Assignment6
 {
@@ -16,9 +20,10 @@ namespace Assignment6
         {
             InitializeComponent();
             LoadChart(chartName);
-            m_mainForm = mainForm;
+            m_mainForm = mainForm;  //stores main form to hide and show instead of creating a new form each time
         }
 
+        //checks which button is clicked and loads the appropriate chart
         private void LoadChart(string chartName)
         {
             switch (chartName)
@@ -41,6 +46,7 @@ namespace Assignment6
 
         }
 
+        //Creates MLB attendance comparison Bar Graph
         private void CreateAttendanceBarGraph()
         {
             Text = "Attendance Rates";
@@ -70,6 +76,7 @@ namespace Assignment6
             ChartControl.ChartAreas[0].AxisY.Title = "Attendance";
         }
 
+        //Creates MLB hitting stats Line Graph
         private void CreateHittingStatsLineGraph()
         {
             Text = "Hitting Statistics";
@@ -125,6 +132,7 @@ namespace Assignment6
             ChartControl.ChartAreas[0].AxisY.Interval = .050;
         }
 
+        //Creates Social Media Market Share Pie Chart
         private void CreateSocialMediaPieChart()
         {
             Text = "Social Media Market Share";
@@ -143,6 +151,7 @@ namespace Assignment6
             ChartControl.Series.Add(marketShare);
         }
 
+        //Creates Scatter Plot of ice cream sales
         private void CreateIceCreamScatterPlot()
         {
             Text = "Icecream Sales";
@@ -163,6 +172,7 @@ namespace Assignment6
             ChartControl.Series.Add(iceCreamSeries);
         }
 
+        //reads the ice cream sales statistics .txt file
         private List<IceCreamSales> LoadIceCreamSales()
         {
             var fileName = "TempAndIcecream.txt";
@@ -185,6 +195,7 @@ namespace Assignment6
             return statObjects;
         }
 
+        //reads the social media market share stats .txt file
         private List<SocialMediaStat> LoadSocialMediaStats()
         {
             var fileName = "SocialMedia.txt";
@@ -207,6 +218,7 @@ namespace Assignment6
             return statObjects;
         }
 
+        //reads the MLB hitting stats .txt file
         private List<HittingStats> LoadHittingStats()
         {
             var fileName = "HittingStats.txt";
@@ -232,6 +244,7 @@ namespace Assignment6
             return statObjects;
         }
 
+        //reads the MLB attendance rate .txt file
         private List<AttendanceRate> LoadAttendanceRates()
         {
             var fileName = "AttendanceRate.txt";
@@ -255,12 +268,14 @@ namespace Assignment6
             return attendanceObjects;
         }
 
+        //Hides form when Main menu button is clicked (and shows the main menu)
         private void Menu_Button_Click(object sender, EventArgs e)
         {
             m_mainForm.Show();
             Close();
         }
 
+        //Shows the main form when the second form is "x"d out 
         private void ChartForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             m_mainForm.Show();
