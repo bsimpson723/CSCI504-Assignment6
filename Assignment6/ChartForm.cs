@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
@@ -27,6 +28,12 @@ namespace Assignment6
                     break;
                 case "Attendance_Button":
                     CreateAttendanceBarGraph();
+                    break;
+                case "SocialMedia_Button":
+                    CreateSocialMediaPieChart();
+                    break;
+                case "Icecream_Button":
+                    CreateIceCreamScatterPlot();
                     break;
                 default:
                     return;
@@ -116,6 +123,88 @@ namespace Assignment6
             ChartControl.ChartAreas[0].AxisY.Title = "Percentage";
             ChartControl.ChartAreas[0].AxisX.Interval = 1;
             ChartControl.ChartAreas[0].AxisY.Interval = .050;
+        }
+
+        private void CreateSocialMediaPieChart()
+        {
+            Text = "Social Media Market Share";
+            var socialMediaStats = LoadSocialMediaStats();
+            ChartTite_Label.Text = "Social Media Market Share (July 2018)";
+
+            var marketShare = new Series("Market Share");
+            marketShare.ChartType = SeriesChartType.Pie;
+            marketShare["PieLabelStyle"] = "Disabled";
+            foreach (var stat in socialMediaStats)
+            {
+                marketShare.Points.AddXY(stat.Name, stat.MarketShare);
+            }
+            
+            ChartControl.Series.RemoveAt(0);
+            ChartControl.Series.Add(marketShare);
+        }
+
+        private void CreateIceCreamScatterPlot()
+        {
+            Text = "Icecream Sales";
+            var iceCreamSales = LoadIceCreamSales();
+            ChartTite_Label.Text = "Icecream sales related to temperature (C)";
+
+            var iceCreamSeries = new Series("Icecream Sales");
+            iceCreamSeries.ChartType = SeriesChartType.Point;
+
+            foreach (var stat in iceCreamSales)
+            {
+                iceCreamSeries.Points.AddXY(stat.Temp, stat.Sales);
+            }
+
+            ChartControl.ChartAreas[0].AxisX.Title = "Temperature (C)";
+            ChartControl.ChartAreas[0].AxisY.Title = "Icecream Sales ($)";
+            ChartControl.Series.RemoveAt(0);
+            ChartControl.Series.Add(iceCreamSeries);
+        }
+
+        private List<IceCreamSales> LoadIceCreamSales()
+        {
+            var fileName = "TempAndIcecream.txt";
+            if (!File.Exists(fileName))
+            {
+                MessageBox.Show("Unable to load " + fileName);
+                return null;
+            }
+            var lines = File.ReadAllLines(fileName);
+            var statObjects = new List<IceCreamSales>();
+            foreach (var line in lines)
+            {
+                var statFields = line.Split('\t');
+                var iceCreamSales = new IceCreamSales();
+                iceCreamSales.Temp = float.Parse(statFields[0]);
+                iceCreamSales.Sales = Convert.ToInt32(statFields[1]);
+                statObjects.Add(iceCreamSales);
+            }
+
+            return statObjects;
+        }
+
+        private List<SocialMediaStat> LoadSocialMediaStats()
+        {
+            var fileName = "SocialMedia.txt";
+            if (!File.Exists(fileName))
+            {
+                MessageBox.Show("Unable to load " + fileName);
+                return null;
+            }
+            var lines = File.ReadAllLines(fileName);
+            var statObjects = new List<SocialMediaStat>();
+            foreach (var line in lines)
+            {
+                var statFields = line.Split('\t');
+                var socialMediaStat = new SocialMediaStat();
+                socialMediaStat.Name = statFields[0];
+                socialMediaStat.MarketShare = decimal.Parse(statFields[1]);
+                statObjects.Add(socialMediaStat);
+            }
+
+            return statObjects;
         }
 
         private List<HittingStats> LoadHittingStats()

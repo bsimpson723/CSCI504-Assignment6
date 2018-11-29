@@ -1,0 +1,11 @@
+Facebook	36.64
+YouTube	27.01
+Twitter	6.82
+Reddit	5.10
+Instagram	2.47
+Pinterest	1.95
+LinkedIn	1.58
+Quora	1.29
+Tumblr	1.16
+Yelp	1.03
+Other	14.95

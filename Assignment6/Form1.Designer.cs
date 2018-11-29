@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.Attendance_Button = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.SocialMedia_Button = new System.Windows.Forms.Button();
             this.Batting_Button = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.Icecream_Button = new System.Windows.Forms.Button();
             this.Exit_Button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -46,15 +46,16 @@
             this.Attendance_Button.UseVisualStyleBackColor = true;
             this.Attendance_Button.Click += new System.EventHandler(this.LoadReport_Click);
             // 
-            // button3
+            // SocialMedia_Button
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(144, 209);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 50);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.SocialMedia_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SocialMedia_Button.Location = new System.Drawing.Point(144, 209);
+            this.SocialMedia_Button.Name = "SocialMedia_Button";
+            this.SocialMedia_Button.Size = new System.Drawing.Size(150, 50);
+            this.SocialMedia_Button.TabIndex = 1;
+            this.SocialMedia_Button.Text = "Social Media Market Share";
+            this.SocialMedia_Button.UseVisualStyleBackColor = true;
+            this.SocialMedia_Button.Click += new System.EventHandler(this.LoadReport_Click);
             // 
             // Batting_Button
             // 
@@ -67,15 +68,16 @@
             this.Batting_Button.UseVisualStyleBackColor = true;
             this.Batting_Button.Click += new System.EventHandler(this.LoadReport_Click);
             // 
-            // button4
+            // Icecream_Button
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(144, 272);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(150, 50);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.Icecream_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icecream_Button.Location = new System.Drawing.Point(144, 272);
+            this.Icecream_Button.Name = "Icecream_Button";
+            this.Icecream_Button.Size = new System.Drawing.Size(150, 50);
+            this.Icecream_Button.TabIndex = 3;
+            this.Icecream_Button.Text = "Icecream Sales";
+            this.Icecream_Button.UseVisualStyleBackColor = true;
+            this.Icecream_Button.Click += new System.EventHandler(this.LoadReport_Click);
             // 
             // Exit_Button
             // 
@@ -94,9 +96,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 411);
             this.Controls.Add(this.Exit_Button);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.Icecream_Button);
             this.Controls.Add(this.Batting_Button);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.SocialMedia_Button);
             this.Controls.Add(this.Attendance_Button);
             this.Name = "Form1";
             this.Text = "Chart Portal";
@@ -107,9 +109,9 @@
         #endregion
 
         private System.Windows.Forms.Button Attendance_Button;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button SocialMedia_Button;
         private System.Windows.Forms.Button Batting_Button;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button Icecream_Button;
         private System.Windows.Forms.Button Exit_Button;
     }
 }
