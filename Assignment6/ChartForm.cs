@@ -146,6 +146,11 @@ namespace Assignment6
             {
                 marketShare.Points.AddXY(stat.Name, stat.MarketShare);
             }
+
+            foreach (var point in marketShare.Points)
+            {
+                point.LegendText = string.Format("{0} ({1}%)", point.AxisLabel, point.YValues[0]);
+            }
             
             ChartControl.Series.RemoveAt(0);
             ChartControl.Series.Add(marketShare);

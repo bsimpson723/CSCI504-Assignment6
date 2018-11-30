@@ -42,7 +42,7 @@
             this.Attendance_Button.Name = "Attendance_Button";
             this.Attendance_Button.Size = new System.Drawing.Size(150, 50);
             this.Attendance_Button.TabIndex = 0;
-            this.Attendance_Button.Text = "Attendance Rate";
+            this.Attendance_Button.Text = "Attendance Rate Bar Chart";
             this.Attendance_Button.UseVisualStyleBackColor = true;
             this.Attendance_Button.Click += new System.EventHandler(this.LoadReport_Click);
             // 
@@ -53,7 +53,7 @@
             this.SocialMedia_Button.Name = "SocialMedia_Button";
             this.SocialMedia_Button.Size = new System.Drawing.Size(150, 50);
             this.SocialMedia_Button.TabIndex = 1;
-            this.SocialMedia_Button.Text = "Social Media Market Share";
+            this.SocialMedia_Button.Text = "Social Media   Pie Chart";
             this.SocialMedia_Button.UseVisualStyleBackColor = true;
             this.SocialMedia_Button.Click += new System.EventHandler(this.LoadReport_Click);
             // 
@@ -64,7 +64,7 @@
             this.Batting_Button.Name = "Batting_Button";
             this.Batting_Button.Size = new System.Drawing.Size(150, 50);
             this.Batting_Button.TabIndex = 2;
-            this.Batting_Button.Text = "Hitting Statistics";
+            this.Batting_Button.Text = "Hitting Stat   Line Chart";
             this.Batting_Button.UseVisualStyleBackColor = true;
             this.Batting_Button.Click += new System.EventHandler(this.LoadReport_Click);
             // 
@@ -75,7 +75,7 @@
             this.Icecream_Button.Name = "Icecream_Button";
             this.Icecream_Button.Size = new System.Drawing.Size(150, 50);
             this.Icecream_Button.TabIndex = 3;
-            this.Icecream_Button.Text = "Icecream Sales";
+            this.Icecream_Button.Text = "Icecream Sales Point Chart";
             this.Icecream_Button.UseVisualStyleBackColor = true;
             this.Icecream_Button.Click += new System.EventHandler(this.LoadReport_Click);
             // 
